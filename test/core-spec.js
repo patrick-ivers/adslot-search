@@ -66,43 +66,43 @@ describe('core logic', () => {
         it('doesn\'t populate search results if query is empty', () => {
             const query = '';
             const nextState = search(TEST_STATE, query);
-            expect(nextState.search.results).to.equal([]);
+            expect(nextState.search.results).to.deep.equal([]);
         });
 
         it('doesn\'t populate search results if no matches found for query', () => {
             const query = 'HTML';
             const nextState = search(TEST_STATE, query);
-            expect(nextState.search.results).to.equal([]);
+            expect(nextState.search.results).to.deep.equal([]);
         });
 
         it('populates search results if matches found for query', () => {
             const query = 'javascript';
             const nextState = search(TEST_STATE, query);
-            expect(nextState.search.results).to.equal([ 1, 2 ]);
+            expect(nextState.search.results).to.deep.equal([ 1, 2 ]);
         });
 
         it('populates search results if matches found for query with multiple keywords', () => {
             const query = 'control, gif';
             const nextState = search(TEST_STATE, query);
-            expect(nextState.search.results).to.equal([ 2, 3, 4 ]);
+            expect(nextState.search.results).to.deep.equal([ 2, 3, 4 ]);
         });
 
         it('removes existing results if query is empty', () => {
             const query = '';
             const nextState = search(TEST_STATE_WITH_RESULTS, query);
-            expect(nextState.search.results).to.equal([]);
+            expect(nextState.search.results).to.deep.equal([]);
         });
 
         it('removes existing results if no matches found for query', () => {
             const query = 'Python';
             const nextState = search(TEST_STATE_WITH_RESULTS, query);
-            expect(nextState.search.results).to.equal([]);
+            expect(nextState.search.results).to.deep.equal([]);
         });
 
         it('changes search results if query changes', () => {
             const query = 'javascript, objective-c';
             const nextState = search(TEST_STATE_WITH_RESULTS, query);
-            expect(nextState.search.results).to.equal([ 1, 2 ]);
+            expect(nextState.search.results).to.deep.equal([ 1, 2 ]);
         });
 
     });
