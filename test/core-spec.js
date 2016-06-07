@@ -84,7 +84,7 @@ describe('core logic', () => {
         it('populates search results if matches found for query with multiple keywords', () => {
             const query = 'control, gif';
             const nextState = search(TEST_STATE, query);
-            expect(nextState.search.results).to.deep.equal([ 2, 3, 4 ]);
+            expect(nextState.search.results).to.deep.equal([ 2, 4 ]);
         });
 
         it('removes existing results if query is empty', () => {
