@@ -1,0 +1,11 @@
+{
+  "name": "adslot-search",
+  "version": "1.0.0",
+  "description": "Adslot Search (Front-End Test)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Patrick Ivers <patrick.john.ivers@gmail.com> (http://ivers.com.au)"
+}
