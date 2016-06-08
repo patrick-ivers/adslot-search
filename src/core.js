@@ -6,13 +6,13 @@ export function setQuery(state, query = '') {
     return state.setIn([ 'search', 'query' ], query);
 }
 
-export function search(state, query = '') {
-    if (query === '') {
-        return state.set('search', { query: '', results: [] });       
+export function search(state) {
+    if (state.search.query.trim() === '') {
+        return state.setIn([ 'search', 'results' ], []);
     }
 
     // Extract query keywords and trim all leading/trailing whitespace
-    const keywords = query
+    const keywords = state.search.query
         .toLowerCase()
         .split(',')
         .map(Function.prototype.call, String.prototype.trim);
@@ -52,5 +52,5 @@ export function search(state, query = '') {
         });
     });
 
-    return state.set('search', { query: query, results: results });
+    return state.setIn([ 'search', 'results' ], results);
 }
