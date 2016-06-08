@@ -8,9 +8,9 @@ const SearchResults = ({ sites }) => {
         <div className="SearchResults">
             {sites.length !== 0 ?
                 <ul>
-                    {sites.map((site) => {
-                        <SiteListItem id={site.id} url={site.url} description={site.description} />
-                    })}
+                    {sites.map((site) =>
+                        <SiteListItem key={site.id} url={site.siteUrl} description={site.description} />
+                    )}
                 </ul>
                 :
                 <p className="SearchResultsEmpty">{noResultsMessage}</p>
