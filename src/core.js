@@ -1,5 +1,9 @@
 export function setQuery(state, query = '') {
-    return state;
+    if (typeof query !== 'string') {
+        throw 'Invalid query type';
+    }
+
+    return state.setIn([ 'search', 'query' ], query);
 }
 
 export function search(state, query = '') {
