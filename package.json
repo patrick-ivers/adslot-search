@@ -4,7 +4,7 @@
   "description": "Adslot Search (Front-End Test)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:babel-core/register --require ./test/component-test-helper.js"
   },
   "keywords": [],
   "author": "Patrick Ivers <patrick.john.ivers@gmail.com> (http://ivers.com.au)",
