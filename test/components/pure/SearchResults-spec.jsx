@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 // TODO: Make these relative to 'src/'
 import SearchResults from '../../../src/components/pure/SearchResults';
