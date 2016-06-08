@@ -21,7 +21,8 @@
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "jsdom": "^9.2.1",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.1.0"
   },
   "babel": {
     "presets": [
