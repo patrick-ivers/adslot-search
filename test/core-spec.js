@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Immutable from 'seamless-immutable';
-import { search } from '../src/core';
+import { setQuery, search } from '../src/core';
 
 const TEST_STATE = Immutable.from({
     sites: [
@@ -55,13 +55,23 @@ const TEST_STATE_WITH_RESULTS = TEST_STATE.merge({
 
 describe('core logic', () => {
 
-    describe('search', () => {
+    describe('setQuery', () => {
 
         it('sets query value', () => {
             const query = 'Patrick';
-            const nextState = search(TEST_STATE, query);
+            const nextState = setQuery(TEST_STATE, query);
             expect(nextState.search.query).to.equal('Patrick');
         });
+
+        it('rejects query that is not a string', () => {
+            const query = 5;
+            const fn = () => setQuery(TEST_STATE, query);
+            expect(fn).to.throw('Invalid query type');
+        });
+
+    });
+
+    describe('search', () => {
 
         it('doesn\'t populate search results if query is empty', () => {
             const query = '';
