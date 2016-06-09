@@ -10,14 +10,28 @@ class SearchInput extends Component {
     render() {
         return (
             <div className="search-input">
-                <input type="text" onChange={this.handleInput} value={this.props.query} />
+                <input
+                    className="search-input-control"
+                    type="text"
+                    placeholder="Search Publishers"
+                    onChange={this.handleInput}
+                    value={this.props.query} />
             </div>
         );
     }
 
     handleInput(e) {
         this.props.setQuery(e.target.value);
-        this.props.search(); // TODO: Debounce
+
+        // If we was making the request to a server
+        // or searching through a large set of data,
+        // I would debounce the search call here
+        // instead of calling search() directly.
+        //
+        // Separating setting the query value from
+        // searching was done with debouncing in mind.
+        //
+        this.props.search();
     }
     
 }
