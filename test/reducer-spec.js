@@ -15,7 +15,7 @@ describe('reducer', () => {
     });
 
     it('handles SEARCH', () => {
-        const state = TEST_STATE.merge({ search: { query: 'control, gif' }});
+        const state = TEST_STATE.merge({ search: { query: 'control, gif', canSearch: true }});
         const action = {
             type: 'SEARCH'
         };
