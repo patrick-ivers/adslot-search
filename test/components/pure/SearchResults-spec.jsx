@@ -29,7 +29,7 @@ describe('SearchResults', () => {
         ];
 
         const wrapper = shallow(
-            <SearchResults sites={sites} />
+            <SearchResults results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);
@@ -39,7 +39,7 @@ describe('SearchResults', () => {
     it('renders with no results', () => {
         const sites = [];
         const wrapper = shallow(
-            <SearchResults sites={sites} />
+            <SearchResults results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);

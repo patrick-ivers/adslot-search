@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react';
 import SiteListItem from './SiteListItem';
 
-const SearchResults = ({ sites }) => {
+const SearchResults = ({ results }) => {
     const noResultsMessage = 'We currently don’t have any results for your search, try another.';
 
     return (
         <div className="SearchResults">
-            {sites.length !== 0 ?
+            {results.length !== 0 ?
                 <ul>
-                    {sites.map((site) =>
-                        <SiteListItem key={site.id} url={site.siteUrl} description={site.description} />
+                    {results.map((result) =>
+                        <SiteListItem key={result.id} url={result.siteUrl} description={result.description} />
                     )}
                 </ul>
                 :
@@ -20,7 +20,7 @@ const SearchResults = ({ sites }) => {
 };
 
 SearchResults.propTypes = {
-    sites: PropTypes.array.isRequired
+    results: PropTypes.array.isRequired
 };
 
 export default SearchResults;

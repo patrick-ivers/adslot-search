@@ -19,6 +19,7 @@ class SearchInput extends Component {
         this.props.setQuery(e.target.value);
         this.props.search(); // TODO: Debounce
     }
+    
 }
 
 SearchInput.propTypes = {
