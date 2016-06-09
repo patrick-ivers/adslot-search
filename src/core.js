@@ -10,12 +10,13 @@ export function search(state) {
     if (state.search.query.trim() === '') {
         return state.setIn([ 'search', 'results' ], []);
     }
-
-    // Extract query keywords and trim all leading/trailing whitespace
+    
+    // Extract query keywords
     const keywords = state.search.query
         .toLowerCase()
         .split(',')
-        .map(Function.prototype.call, String.prototype.trim);
+        .map(Function.prototype.call, String.prototype.trim) // Remove leading/trailing whitespace
+        .filter(Boolean); // Remove empty strings
 
     const results = [];
 
