@@ -2,17 +2,16 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080', // ...Required for automatic refresh.
+        'webpack-dev-server/client?http://localhost:8080',
         './index.jsx'
     ],
     output: {
         path: './dist',
-        publicPath: '/', // ...Required for dev server. Reloading won't work without this.
+        publicPath: '/',
         filename: 'bundle.js'
     },
     module: {
         loaders: [
-            // Loads JS/JSX files and parses with Babel...
             {
                 test: /\.jsx?$/,
                 loader: 'babel',
@@ -37,7 +36,6 @@ module.exports = {
         ]
     },
     resolve: {
-        // Resolves JS/JSX modules when importing...
         extensions: ['', '.js', '.jsx']
     }
 };
