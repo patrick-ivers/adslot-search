@@ -15,7 +15,7 @@ class Search extends Component {
         } = this.props;
 
         return (
-            <div className="Search">
+            <div className="search">
                 <SearchInput query={query} setQuery={setQuery} search={search} />
                 <SearchResults results={results} />
             </div>

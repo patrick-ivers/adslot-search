@@ -16,12 +16,12 @@ describe('SiteListItem', () => {
             <SiteListItem url={url} description={description} />
         );
 
-        const link = wrapper.find('.SiteListItemLink');
+        const link = wrapper.find('.site-list-item-link');
         expect(link.length).to.equal(1);
         expect(link.prop('href')).to.equal(`http://${url}`);
         expect(link.text()).to.equal(url);
 
-        const desc = wrapper.find('.SiteListItemDesc');
+        const desc = wrapper.find('.site-list-item-desc');
         expect(desc.length).to.equal(1);
         expect(desc.text()).to.equal(description);
     });

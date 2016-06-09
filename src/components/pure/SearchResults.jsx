@@ -5,7 +5,7 @@ const SearchResults = ({ results }) => {
     const noResultsMessage = 'We currently don’t have any results for your search, try another.';
 
     return (
-        <div className="SearchResults">
+        <div className="search-results">
             {results.length !== 0 ?
                 <ul>
                     {results.map((result) =>
@@ -13,7 +13,7 @@ const SearchResults = ({ results }) => {
                     )}
                 </ul>
                 :
-                <p className="SearchResultsEmpty">{noResultsMessage}</p>
+                <p className="search-results-empty">{noResultsMessage}</p>
             }
         </div>
     );

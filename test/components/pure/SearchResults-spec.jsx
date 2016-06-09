@@ -45,7 +45,7 @@ describe('SearchResults', () => {
         const results = wrapper.find(SiteListItem);
         expect(results.length).to.equal(0);
 
-        const noResultsMessage = wrapper.find('.SearchResultsEmpty');
+        const noResultsMessage = wrapper.find('.search-results-empty');
         expect(noResultsMessage.length).to.equal(1);
         expect(noResultsMessage.text()).to.equal('We currently don’t have any results for your search, try another.');
     });

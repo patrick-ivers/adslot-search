@@ -4,9 +4,9 @@ const SiteListItem = ({ url, description }) => {
     const href = 'http://' + url;
 
     return (
-        <li className="SiteListItem">
-            <a className="SiteListItemLink" href={href} target="_blank">{url}</a>
-            <p className="SiteListItemDesc">{description}</p>
+        <li className="site-list-item">
+            <a className="site-list-item-link" href={href} target="_blank">{url}</a>
+            <p className="site-list-item-desc">{description}</p>
         </li>
     );
 };

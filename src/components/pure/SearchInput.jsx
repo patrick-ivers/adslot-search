@@ -9,7 +9,7 @@ class SearchInput extends Component {
 
     render() {
         return (
-            <div className="SearchInput">
+            <div className="search-input">
                 <input type="text" onChange={this.handleInput} value={this.props.query} />
             </div>
         );
