@@ -2,14 +2,16 @@ import React, { Component, PropTypes } from 'react';
 
 class SearchInput extends Component {
 
-    contructor(props) {
+    constructor(props) {
         super(props);
         this.handleInput = this.handleInput.bind(this);
     }
 
     render() {
         return (
-            <input type="text" onChange={this.handleInput} value={this.props.query} />
+            <div className="SearchInput">
+                <input type="text" onChange={this.handleInput} value={this.props.query} />
+            </div>
         );
     }
 
