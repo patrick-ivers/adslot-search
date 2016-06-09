@@ -9,12 +9,17 @@ import SiteListItem from '../../../src/components/pure/SiteListItem';
 describe('SiteListItem', () => {
 
     it('renders with props', () => {
+        const name = 'React';
         const url = 'facebook.github.io/react';
         const description = 'A JavaScript library for building user interfaces';
 
         const wrapper = shallow(
-            <SiteListItem url={url} description={description} />
+            <SiteListItem title={name} url={url} description={description} />
         );
+
+        const title = wrapper.find('.site-list-item-title');
+        expect(title.length).to.equal(1);
+        expect(title.text()).to.equal(name);
 
         const link = wrapper.find('.site-list-item-link');
         expect(link.length).to.equal(1);

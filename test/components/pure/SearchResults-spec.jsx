@@ -26,16 +26,19 @@ describe('SearchResults', () => {
         const sites = [
             {
                 id: 1,
+                siteName: 'React',
                 siteUrl: 'facebook.github.io/react',
                 description: 'A JavaScript library for building user interfaces'
             },
             {
                 id: 2,
+                siteName: 'Angular 2',
                 siteUrl: 'angular.io',
                 description: 'One framework. Mobile and desktop.'
             },
             {
                 id: 3,
+                siteName: 'the_coding_love();',
                 siteUrl: 'thecodinglove.com',
                 description: '/* epic gifs for developers */'
             }

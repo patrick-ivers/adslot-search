@@ -10,7 +10,7 @@ const SearchResults = ({ query, canSearch, results }) => {
             {results.length !== 0 ?
                 <ul className="search-results-list">
                     {results.map((result) =>
-                        <SiteListItem key={result.id} url={result.siteUrl} description={result.description} />
+                        <SiteListItem key={result.id} title={result.siteName} url={result.siteUrl} description={result.description} />
                     )}
                 </ul>
                 :
