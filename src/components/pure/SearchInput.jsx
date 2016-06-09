@@ -23,13 +23,13 @@ class SearchInput extends Component {
     handleInput(e) {
         this.props.setQuery(e.target.value);
 
-        // If we was making the request to a server
+        // If I was making the request to a server
         // or searching through a large set of data,
         // I would debounce the search call here
         // instead of calling search() directly.
         //
-        // Separating setting the query value from
-        // searching was done with debouncing in mind.
+        // Separating setQuery() from search() was
+        // done with debouncing in mind.
         //
         this.props.search();
     }
