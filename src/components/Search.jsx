@@ -17,7 +17,7 @@ class Search extends Component {
         return (
             <div className="search">
                 <SearchInput query={query} setQuery={setQuery} search={search} />
-                <SearchResults results={results} />
+                <SearchResults query={query} results={results} />
             </div>
         );
     }

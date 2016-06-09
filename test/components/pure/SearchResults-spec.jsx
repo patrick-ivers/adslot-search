@@ -9,7 +9,20 @@ import SiteListItem from '../../../src/components/pure/SiteListItem';
 
 describe('SearchResults', () => {
 
-    it('renders with results', () => {
+    it('renders before query entered', () => {
+        const sites = [];
+        const wrapper = shallow(
+            <SearchResults query={''} results={sites} />
+        );
+
+        const results = wrapper.find(SiteListItem);
+        expect(results.length).to.equal(0);
+
+        const noResultsMessage = wrapper.find('.search-results-empty');
+        expect(noResultsMessage.length).to.equal(0);
+    });
+
+    it('renders with results from query', () => {
         const sites = [
             {
                 id: 1,
@@ -29,17 +42,20 @@ describe('SearchResults', () => {
         ];
 
         const wrapper = shallow(
-            <SearchResults results={sites} />
+            <SearchResults query={''} results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);
         expect(results.length).to.equal(3);
+
+        const noResultsMessage = wrapper.find('.search-results-empty');
+        expect(noResultsMessage.length).to.equal(0);
     });
 
-    it('renders with no results', () => {
+    it('renders with no results from query', () => {
         const sites = [];
         const wrapper = shallow(
-            <SearchResults results={sites} />
+            <SearchResults query={'Patrick'} results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);
