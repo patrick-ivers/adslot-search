@@ -39,6 +39,7 @@ export default Immutable.from({
     ],
     search: {
         query: '',
+        canSearch: false,
         results: []
     }
 });

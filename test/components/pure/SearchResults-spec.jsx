@@ -12,7 +12,7 @@ describe('SearchResults', () => {
     it('renders before query entered', () => {
         const sites = [];
         const wrapper = shallow(
-            <SearchResults query={''} results={sites} />
+            <SearchResults query={''} canSearch={false} results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);
@@ -42,7 +42,7 @@ describe('SearchResults', () => {
         ];
 
         const wrapper = shallow(
-            <SearchResults query={''} results={sites} />
+            <SearchResults query={'javascript, coding'} canSearch={true} results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);
@@ -55,7 +55,7 @@ describe('SearchResults', () => {
     it('renders with no results from query', () => {
         const sites = [];
         const wrapper = shallow(
-            <SearchResults query={'Patrick'} results={sites} />
+            <SearchResults query={'Patrick'} canSearch={true} results={sites} />
         );
 
         const results = wrapper.find(SiteListItem);

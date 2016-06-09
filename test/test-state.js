@@ -39,6 +39,7 @@ export const TEST_STATE = Immutable.from({
     ],
     search: {
         query: '',
+        canSearch: false,
         results: []
     }
 });
@@ -46,6 +47,7 @@ export const TEST_STATE = Immutable.from({
 export const TEST_STATE_WITH_RESULTS = TEST_STATE.merge({
     search: {
         query: 'coding',
+        canSearch: true,
         results: [ 1, 2, 3 ]
     }
 });

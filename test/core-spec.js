@@ -34,13 +34,13 @@ describe('core logic', () => {
         });
 
         it('populates search results if matches found for query', () => {
-            const state = TEST_STATE.merge({ search: { query: 'javascript' }});
+            const state = TEST_STATE.merge({ search: { query: 'javascript', canSearch: true }});
             const nextState = search(state);
             expect(nextState.search.results).to.deep.equal([ 1, 2 ]);
         });
 
         it('populates search results if matches found for query with multiple keywords', () => {
-            const state = TEST_STATE.merge({ search: { query: 'control, gif' }});
+            const state = TEST_STATE.merge({ search: { query: 'control, gif', canSearch: true }});
             const nextState = search(state);
             expect(nextState.search.results).to.deep.equal([ 2, 4 ]);
         });
@@ -58,7 +58,12 @@ describe('core logic', () => {
         });
 
         it('changes search results if query changes', () => {
-            const state = TEST_STATE_WITH_RESULTS.merge({ search: { query: 'javascript, objective-c' }});
+            const state = TEST_STATE_WITH_RESULTS.merge({
+                search: {
+                    query: 'javascript, objective-c',
+                    canSearch: true
+                }
+            });
             const nextState = search(state);
             expect(nextState.search.results).to.deep.equal([ 1, 2 ]);
         });
