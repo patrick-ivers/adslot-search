@@ -9,6 +9,7 @@ class Search extends Component {
     render() {
         const {
             query,
+            canSearch,
             setQuery,
             search,
             results
@@ -17,7 +18,7 @@ class Search extends Component {
         return (
             <div className="search">
                 <SearchInput query={query} setQuery={setQuery} search={search} />
-                <SearchResults query={query} results={results} />
+                <SearchResults query={query} canSearch={canSearch} results={results} />
             </div>
         );
     }
@@ -26,6 +27,7 @@ class Search extends Component {
 
 Search.propTypes = {
     query: PropTypes.string.isRequired,
+    canSearch: PropTypes.bool.isRequired,
     setQuery: PropTypes.func.isRequired,
     search: PropTypes.func.isRequired,
     results: PropTypes.array.isRequired
@@ -40,6 +42,7 @@ const getResults = (state) => {
 function mapStateToProps(state) {
     return {
         query: state.search.query,
+        canSearch: state.search.canSearch,
         results: getResults(state)
     };
 }

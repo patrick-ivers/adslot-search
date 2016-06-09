@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import SiteListItem from './SiteListItem';
 
-const SearchResults = ({ query, results }) => {
+const SearchResults = ({ query, canSearch, results }) => {
     const noResultsMessage = 'We currently don’t have any results for your search, try another.';
     const hasQuery = query.trim().length > 0;
 
@@ -14,7 +14,7 @@ const SearchResults = ({ query, results }) => {
                     )}
                 </ul>
                 :
-                hasQuery ? <p className="search-results-empty">{noResultsMessage}</p> : ''
+                hasQuery && canSearch ? <p className="search-results-empty">{noResultsMessage}</p> : ''
             }
         </div>
     );
@@ -22,6 +22,7 @@ const SearchResults = ({ query, results }) => {
 
 SearchResults.propTypes = {
     query: PropTypes.string.isRequired,
+    canSearch: PropTypes.bool.isRequired,
     results: PropTypes.array.isRequired
 };
 

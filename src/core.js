@@ -3,11 +3,15 @@ export function setQuery(state, query = '') {
         throw 'Invalid query type';
     }
 
-    return state.setIn([ 'search', 'query' ], query);
+    return state.setIn(
+        [ 'search', 'query' ], query
+    ).setIn(
+        [ 'search', 'canSearch' ], (query.length > 2)
+    );
 }
 
 export function search(state) {
-    if (state.search.query.trim() === '') {
+    if (state.search.query.trim() === '' || !state.search.canSearch) {
         return state.setIn([ 'search', 'results' ], []);
     }
     
