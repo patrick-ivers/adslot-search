@@ -13,5 +13,6 @@ ReactDOM.render(
         <App>
             <SearchContainer />
         </App>
-    </Provider>
+    </Provider>,
+    document.getElementById('app')
 );
