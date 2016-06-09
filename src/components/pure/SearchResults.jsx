@@ -7,7 +7,7 @@ const SearchResults = ({ results }) => {
     return (
         <div className="search-results">
             {results.length !== 0 ?
-                <ul>
+                <ul className="search-results-list">
                     {results.map((result) =>
                         <SiteListItem key={result.id} url={result.siteUrl} description={result.description} />
                     )}

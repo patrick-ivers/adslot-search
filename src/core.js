@@ -11,6 +11,7 @@ export function search(state) {
         return state.setIn([ 'search', 'results' ], []);
     }
 
+    // TODO: Strip out empty strings!
     // Extract query keywords and trim all leading/trailing whitespace
     const keywords = state.search.query
         .toLowerCase()

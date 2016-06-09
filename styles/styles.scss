@@ -1,0 +1,112 @@
+/* TODO: Make this relative to '/node_modules/compass-mixins/lib' */
+@import "../node_modules/compass-mixins/lib/compass/css3/user-interface";
+
+
+
+// Fonts
+// ----------------------------------------------------------------
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-stack: robotolight, Helvetica, Arial, sans-serif;
+
+
+
+// Colors
+// ----------------------------------------------------------------
+
+$white:        hsl(0.0, 0.0%, 100.0%);
+$gray950:      hsl(0.0, 0.0%, 95.0%);
+$gray880:      hsl(0.0, 0.0%, 88.0%);
+$gray670:      hsl(0.0, 0.0%, 67.0%);
+$gray580:      hsl(0.0, 0.0%, 58.0%);
+$gray440:      hsl(0.0, 0.0%, 44.0%);
+$gray180:      hsl(0.0, 0.0%, 18.0%);
+$primary-blue: #006dcc;
+
+
+
+// Generic
+// ----------------------------------------------------------------
+
+body {
+    background-color: $gray950;
+    font-family: $font-stack;
+    padding-top: 35px;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+
+// Search Input
+// ----------------------------------------------------------------
+
+.search-input-control {
+    background: $white url('../img/magnifying-glass.png') no-repeat 900px center;
+    color: $gray180;
+    width: 842px;
+    border: 1px solid $gray880;
+    font-size: 30px;
+    padding: 22px 90px 22px 28px;
+    outline: none;
+
+    @include input-placeholder {
+        color: $gray670;
+    }
+}
+
+
+
+// Search Results
+// ----------------------------------------------------------------
+
+.search-results {
+    padding-top: 35px;
+}
+
+.search-results-list {
+    padding: 0;
+    margin: 0 10px;
+}
+
+.search-results-empty {
+    color: $gray580;
+    border: 1px solid $gray880;
+    padding: 20px 40px;
+    margin: 0 auto;
+    width: 450px;
+}
+
+
+
+// Site List Item
+// ----------------------------------------------------------------
+
+.site-list-item {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.site-list-item-link {
+    color: $primary-blue;
+}
+
+.site-list-item-desc {
+    font-size: 14px;
+    color: $gray440;
+    margin: 0;
+    margin-top: 5px;
+}

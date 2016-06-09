@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "Patrick Ivers <patrick.john.ivers@gmail.com> (http://ivers.com.au)",
   "dependencies": {
+    "compass-mixins": "^0.12.10",
     "normalize-css": "^2.3.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
@@ -26,6 +27,7 @@
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
+    "file-loader": "^0.8.5",
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
     "node-sass": "^3.7.0",
